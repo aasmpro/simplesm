@@ -1,4 +1,4 @@
-from simplesm import SimpleSM
+from simplesm.simplesm import SimpleSM
 
 
 class TestMachine(SimpleSM):

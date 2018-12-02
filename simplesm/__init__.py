@@ -1,4 +1,4 @@
-from .simplesm import SimpleSM
+from simplesm import SimpleSM
 
 __title__ = 'simplesocket'
 __version__ = '0.1.0'
