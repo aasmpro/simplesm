@@ -1,12 +1,12 @@
-from simplesm import SimpleSM
+from .simplesm import SimpleSM
 
-__title__ = 'simplesocket'
-__version__ = '0.1.0'
+__title__ = 'simplesm'
+__version__ = '0.1.1'
 __author__ = 'Abolfazl Amiri'
 __author_email__ = 'aa.smpro@gmail.com'
 __license__ = 'GNU General Public License v3 (GPLv3)'
 __all__ = ['SimpleSM']
-__description__ = """simplesm 0.1.0
+__description__ = """simplesm 0.1.1
 simple state machine, based on python dicts.
 machine states are defined by states property. each state is a dict that can contain following values:
     final: bool >> defined if this state is final state
