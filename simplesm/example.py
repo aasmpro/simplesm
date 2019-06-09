@@ -1,4 +1,4 @@
-from simplesm.simplesm import SimpleSM
+from simplesm import SimpleSM
 
 
 class TestMachine(SimpleSM):
@@ -20,7 +20,7 @@ class TestMachine(SimpleSM):
     }
 
     def goto_s2(self):
-        print("yes!")
+        print("we are just going to state S2")
         self.current_state = "S2"
 
     def welcome(self):
@@ -42,9 +42,10 @@ class TestMachine(SimpleSM):
 def main():
     m = TestMachine()
     m.perform(list("0110112a1d011"))
-    print(m.current_state)
-    print(m.accept(list("0110112a1d011")))
-    print(m.current_state)
+    print("current state is",m.current_state,"before calling accept")
+    print("does machine accept 0110112a1d011 ?", m.accept(list("0110112a1d011")))
+    print("current state is",m.current_state,"after calling accept")
+    print("current state is acceptable ?", m.is_acceptable)
 
 
 if __name__ == '__main__':

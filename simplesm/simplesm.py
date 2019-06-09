@@ -37,7 +37,7 @@ class SimpleSM:
         previous_action properties are available.
         it first try to match action with transition, if none matched, it will try to call each transition as a method,
         where test_action property show the current action, so if method called return True, it will accept the action
-        an change state of machine to what transition state say, otherwise if none of transitions work, try to call else
+        a change state of machine to what transition state say, otherwise if none of transitions work, try to call else
         method from state."""
         if not isinstance(actions, list) or isinstance(actions, tuple):
             actions = [actions]
@@ -103,14 +103,14 @@ class SimpleSM:
         self.test_action = None
 
     @property
-    def is_accepted(self):
+    def is_acceptable(self):
         """has True value if the current state of machine has a final: True property, otherwise False."""
         try:
             return self.states[self.current_state]["final"]
         except:
             return False
 
-    def accept(self, actions):
+    def accept(self, actions, do_events=False):
         """return True if the last state of machine after performing actions has a final: True, otherwise False.
         this method will keep current data of machine safe."""
         temp_current_state = self.current_state
@@ -119,8 +119,8 @@ class SimpleSM:
         temp_previous_action = self.previous_action
         temp_test_action = self.test_action
         self.current_state = self.start_state
-        self.perform(actions, do_events=False)
-        result = self.is_accepted
+        self.perform(actions, do_events=do_events)
+        result = self.is_acceptable
         self.current_state = temp_current_state
         self.previous_state = temp_previous_state
         self.current_action = temp_current_action
