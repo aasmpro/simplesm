@@ -1,5 +1,9 @@
+dist
+*.egg-info
+.tox
+_env
+.vscode
 .idea
 simplesm.egg-info/
 __pycache__
-dist
 build
